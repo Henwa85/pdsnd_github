@@ -22,3 +22,6 @@ I was most inspired by the main course lecturer's enthusiasm and style!
 
 ### Documentation Update 1 - improved 'get_filters' function Description
 28 April 2021 ~2:57PM AEST
+
+### Documentation Update 2 - improved documentation for 'load_data' function
+28 April 2021 ~3:02PM AEST
