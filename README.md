@@ -1,17 +1,24 @@
 >**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-Include the date you created this project and README file.
+28 April 2021
 
 ### Project Title
-Replace the Project Title
+Utilising Git and Github in tracking the Udacity Bikeshare Project.
 
 ### Description
-Describe what your project is about and what it does
+This projects demonstrates basic usage of Git and Github for tracking changes to
+a simple python program submitted in project 2 of the Udacity nanodegree program
+titled "Programming for Data Science with Python." It includes some simple
+documentation and refactoring changes of the original submission using Git branches.
 
 ### Files used
-Include the files used
+bikeshare.py
+.gitignore
+README.md
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+I was most inspired by the main course lecturer's enthusiasm and style!
 
+### Documentation Update 1 - improved 'get_filters' function Description
+28 April 2021 ~2:57PM AEST
