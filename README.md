@@ -25,3 +25,6 @@ I was most inspired by the main course lecturer's enthusiasm and style!
 
 ### Documentation Update 2 - improved documentation for 'load_data' function
 28 April 2021 ~3:02PM AEST
+
+### Documentation Update 3 - improved documentation for 'time_stats' funciton
+28 April 2021 ~3:08PM AEST
