@@ -24,9 +24,9 @@ def convert_time(time):
     hours_value = (time // (60 * 60))
     minutes_value = (time - hours_value * (60 * 60)) // 60
     seconds_value = (time - hours_value * (60 * 60) - minutes_value * 60)
-    
+
     return (str(hours_value) + ' hours, ' + str(minutes_value) + ' minutes, ' + str(seconds_value) + ' seconds.')
-    
+
 
 def get_filters():
     """
@@ -49,13 +49,13 @@ def get_filters():
     month = input("Please enter a month (all, january, february, ... , june): ").lower()
     while month not in months and month != 'all':
         month = input("Sorry! That is not a valid month... Please try and enter a month again (all, january, february, ... , june): ").lower()
-        
+
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("Please enter a day of week: ").lower()
     while day not in days_of_week and day != 'all':
         day = input("Sorry! That is not a valid day... Please try and enter a day again (all, monday, tuesday, ..., sunday): ").lower()
-      
+
 
     print('-'*40)
     return city, month, day
@@ -78,20 +78,20 @@ def load_data(city, month, day):
 
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
-    
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
         month = months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
-        
+
     # filter by day of week if applicable
     if day != 'all':
         # filter by day of week to create the new dataframe
@@ -156,12 +156,12 @@ def trip_duration_stats(df):
     total_time = df['Trip Duration'].sum()
     total_time_formatted = convert_time(total_time)
     print("The total travel time was: ", str(total_time), " seconds, or ", total_time_formatted)
-    
+
     # TO DO: display mean travel time
     mean_time = int(df['Trip Duration'].mean())
     mean_time_formatted = convert_time(mean_time)
     print("The mean travel time was: ", str(mean_time), " seconds, or ", mean_time_formatted)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -187,12 +187,12 @@ def user_stats(df):
 
         # TO DO: Display earliest, most recent, and most common year of birth
         min_birth = int(df['Birth Year'].min())
-        recent_birth = int(df['Birth Year'].max())
-        common_birth = int(df['Birth Year'].mode())
-    
+        most_recent_birth = int(df['Birth Year'].max())
+        most_common_birth = int(df['Birth Year'].mode())
+
         print("\nThe earliest year of birth was", min_birth)
-        print("The most recent year of birth was", recent_birth)
-        print("The most common year of birth was", common_birth)
+        print("The most recent year of birth was", most_recent_birth)
+        print("The most common year of birth was", most_common_birth)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -200,7 +200,7 @@ def user_stats(df):
 def raw_data_query(df):
     """Asks the user whether or not they would like to see the raw dataset.
     If 'yes', print 5 rows of data at a time until there is no more data."""
-    
+
     answer = input("Would you like to view the raw data? (yes/no)")
     if answer == 'yes':
         size = df.size
@@ -214,8 +214,8 @@ def raw_data_query(df):
                 print("You have run out of data to view.")
                 break
             answer = input("Would you like to view another 5 rows? (yes/no)")
-    
-    
+
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -226,7 +226,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         raw_data_query(df)
-        
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
