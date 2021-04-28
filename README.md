@@ -20,6 +20,11 @@ README.md
 ### Credits
 I was most inspired by the main course lecturer's enthusiasm and style!
 
+### Important Notes
+The python file contained within this project will not work in isolation as it requires
+3 carefully formatted data files, as used in assignment 2 of this course. Please
+refer to that assignment for those data files.
+
 ### Documentation Update 1
 Description: Improved 'get_filters' function Description
 Date 28 April 2021 ~2:57PM AEST
@@ -35,3 +40,7 @@ Date: 28 April 2021 ~3:08PM AEST
 ### Documentation Update 4:
 Description: Improved formatting of README.md file
 Date: 28 April 2021 ~3:21PM AEST
+
+### Documentation Update 5:
+Description: Added a helpful "important note" regarding usage of the bikeshare.py Programming - namely concerning the data files.
+Date: 28 April 2021 ~3:31PM AEST
